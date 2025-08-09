@@ -6,13 +6,16 @@ public class Main {
     public static void main(String[] args) {
 
         String[] input = {"a", "c", "d", "a", "e", "c", "a"};
-        String str = "The quick brown fox jumps Over the lazy dog";
+        String str = "The quick brown+fox jumps Over the*lazy dog";
 //        printStar();
 //        returnDuplicates(input);
 //        findDuplicatesInArray(input);
 //        numberOfVowels(str);
 //        reverseString(str);
-        findSecondLargestNumber(new int[]{1, 77, 85, 99, 2, 0, 7});
+//        findSecondLargestNumber(new int[]{1, 77, 85, 99, 2, 0, 7});
+//        removeSpecialCharactersFromString(str);
+//        checkIfStringIsPalindrome("noon");
+        fizzBuzz();
     }
 
     static void printStar() {
@@ -114,6 +117,45 @@ public class Main {
         Iterator<Integer> descIterator = orderedSet.descendingIterator();
         descIterator.next();
         System.out.println(descIterator.next());
+    }
+
+    static void removeSpecialCharactersFromString(String input) {
+
+        System.out.println(input.replaceAll("[^a-zA-Z0-9]", ""));
+
+    }
+
+    static void checkIfStringIsPalindrome(String input) {
+        char[] chars = input.toCharArray();
+        char temp;
+        int first = 0, last = chars.length - 1;
+        while (first < last) {
+            temp = chars[first];
+            chars[first] = chars[last];
+            chars[last] = temp;
+            first++;
+            last--;
+        }
+        String output = new String(chars);
+
+        if (input.equals(output)) {
+            System.out.println(true);
+        } else {
+            System.out.println("false");
+        }
+    }
+
+    static void fizzBuzz() {
+        for (int i = 1; i < 16; i++) {
+            if (i % 3 == 0 && i % 5 == 0) {
+                System.out.println("FizzBuzz");
+            } else if (i % 3 == 0) {
+                System.out.println("Fizz");
+            } else if (i % 5 == 0) {
+                System.out.println("Buzz");
+            }  else {
+            System.out.println(i);
+        }}
     }
 }
 
