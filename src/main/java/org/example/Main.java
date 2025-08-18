@@ -15,7 +15,8 @@ public class Main {
 //        findSecondLargestNumber(new int[]{1, 77, 85, 99, 2, 0, 7});
 //        removeSpecialCharactersFromString(str);
 //        checkIfStringIsPalindrome("noon");
-        fizzBuzz();
+//        fizzBuzz();
+          twoSum(new int[]{1, 77, 85, 99, 2, 0, 7}, 9);
     }
 
     static void printStar() {
@@ -156,6 +157,26 @@ public class Main {
             }  else {
             System.out.println(i);
         }}
+    }
+
+//    Prompt: Given an array nums and an integer target, return indices of the two numbers such that they add up to target. Assume exactly one solution and you may not use the same element twice.
+//    Example - Input: nums = [2,7,11,15], target = 9
+//    Output: [0,1]
+    static void twoSum(int[] array, int target){
+
+        // create an array that can hold 2 values
+        int[] output = new int[2];
+
+        for (int i = 0; i < array.length; i++){
+            for (int j = 1; j < array.length; j++){
+                if (array[i]+array[j] == target){
+                   output[0] = i;
+                   output[1] = j;
+
+                }
+            }
+        }
+        System.out.println(Arrays.toString(output));
     }
 }
 
