@@ -16,7 +16,7 @@ public class Main {
 //        removeSpecialCharactersFromString(str);
 //        checkIfStringIsPalindrome("noon");
 //        fizzBuzz();
-          twoSum(new int[]{1, 77, 85, 99, 2, 0, 7}, 9);
+          twoSum(new int[]{1, 77, 85, 2, 99, 2, 0, 7}, 9);
     }
 
     static void printStar() {
@@ -162,7 +162,7 @@ public class Main {
 //    Prompt: Given an array nums and an integer target, return indices of the two numbers such that they add up to target. Assume exactly one solution and you may not use the same element twice.
 //    Example - Input: nums = [2,7,11,15], target = 9
 //    Output: [0,1]
-    static void twoSum(int[] array, int target){
+/*    static void twoSum(int[] array, int target){
 
         // create an array that can hold 2 values
         int[] output = new int[2];
@@ -177,6 +177,28 @@ public class Main {
             }
         }
         System.out.println(Arrays.toString(output));
+    } */  //inefficient
+
+    static void twoSum(int[] inputArray, int target){
+        // loop through array
+        // create hashmap
+        // add key as index and valur as actual value
+        // subtract target - current value, what remaining is what we are looking for
+        // check if hashmap has it, if so what's its index
+
+        Map<Integer, Integer> inputMap = new HashMap<>();
+        for (int i =0; i < inputArray.length; i++){
+            int lookingFor = target-inputArray[i];
+
+            if (inputMap.containsKey(lookingFor)){
+
+                System.out.println("("+inputMap.get(lookingFor) +","+ i +")");
+            }
+
+            inputMap.put(inputArray[i],i);
+
+        }
+
     }
 }
 
